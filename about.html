@@ -1,266 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="About, Skills, Photography, Arts, Certifications, Participations ">
-    <meta name="description" content="About my skills, talents, participations and certifications">
-    <meta name="author" content=Dedeepya Yarlagadda">
-    <meta http-equiv="refresh" content="3600">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Dedeepya Yarlagadda</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/7654ab4b19.js" crossorigin="anonymous"></script>
-    <!-- CSS STYLESHEETS -->
-    <link rel="stylesheet" href="styles.css">
-   <!-- googlefonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-   <!-- favicon -->
-   <link rel="icon" type="image/png" sizes="32x32" href="src/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="About, Skills, Photography, Arts, Certifications, Participations" />
+  <meta name="description" content="About my skills, talents, participations and certifications" />
+  <meta name="author" content="Dedeepya Yarlagadda" />
+  <meta http-equiv="refresh" content="3600" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Dedeepya Yarlagadda</title>
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7654ab4b19.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="src/favicon.png" />
+
+  <style>
+    :root{
+      --brand:#0075f6;
+      --ink:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+    }
+
+    html { scroll-behavior: smooth; height: 100%; }
+
+    body{
+      font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      padding-top: 74px;
+
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main{ flex: 1 0 auto; }
+
+    footer{
+      flex-shrink: 0;
+      border-top: 1px solid rgba(15,23,42,.06);
+      width: 100%;
+      margin-top: auto;
+    }
+
+    /* Navbar (same behavior as index) */
+    .navbar{
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15,23,42,.06);
+    }
+    .navbar-brand{
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .nav-link{
+      font-weight: 600;
+      color: #111827 !important;
+      opacity: .85;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .nav-link:hover{ opacity: 1; transform: translateY(-1px); }
+    .nav-link.active{
+      color: var(--brand) !important;
+      opacity: 1;
+    }
+
+    /* Page header */
+    .page-hero{
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,117,246,.12), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(99,102,241,.10), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16,185,129,.10), transparent 40%);
+      transform: rotate(8deg);
+      pointer-events:none;
+    }
+    .page-hero-inner{
+      position: relative;
+      padding: 40px 0 10px;
+    }
+
+    .eyebrow{
+      color: var(--brand);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .9rem;
+    }
+
+    .title{
+      font-weight: 900;
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      margin: 10px 0 8px;
+    }
+
+    .lead{
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    /* Profile image */
+    .profile-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 18px 0 0;
+    }
+    .profile-img{
+      border-radius: 50%;
+      width: min(360px, 75vw);
+      height: auto;
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: 0 22px 60px rgba(2,6,23,.10);
+      transition: transform .25s ease, box-shadow .25s ease;
+      background: #fff;
+    }
+    .profile-img:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 26px 70px rgba(2,6,23,.16);
+    }
+
+    /* Sections */
+    .section{
+      padding: 28px 0;
+    }
+    .section-title{
+      color: var(--brand);
+      font-weight: 900;
+      text-align: center;
+      margin: 0 0 18px;
+    }
+    .subhead{
+      font-weight: 800;
+      text-align: center;
+      color: #0ea5e9;
+      margin: 18px 0 10px;
+    }
+
+    /* Skills */
+    .skills-grid{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .skill{
+      width: 120px;
+      text-align:center;
+      border: 1px solid rgba(15,23,42,.08);
+      border-radius: 16px;
+      padding: 14px 10px 10px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(2,6,23,.06);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .skill:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(2,6,23,.10);
+      border-color: rgba(0,117,246,.25);
+    }
+    .skill img{ width: 56px; height: 56px; }
+    .skill p{
+      margin: 10px 0 0;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #111827;
+    }
+
+    /* Cards */
+    .card-boost{
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: 0 18px 48px rgba(2,6,23,.08);
+      overflow: hidden;
+      transition: transform .20s ease, box-shadow .20s ease, border-color .20s ease;
+      height: 100%;
+    }
+    .card-boost:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 26px 68px rgba(2,6,23,.14);
+      border-color: rgba(0,117,246,.25);
+    }
+    .card-boost .card-title{
+      font-weight: 900;
+    }
+    .card-boost .btn{
+      border-radius: 12px;
+      font-weight: 800;
+      padding: 10px 14px;
+    }
+
+    /* Scroll reveal */
+    .reveal{
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.show{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Social buttons */
+    .social-btn{
+      border-radius: 12px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .social-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(2,6,23,.10);
+    }
+
+    /* Back to top */
+    .to-top{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(2,6,23,.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity .25s ease, transform .25s ease;
+      z-index: 9999;
+    }
+    .to-top.show{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .to-top i{ color: var(--brand); }
+
+    /* Small helper: reduce heavy borders on mobile */
+    @media (max-width: 991px){
+      .page-hero-inner{ padding: 26px 0 4px; }
+    }
+  </style>
 </head>
+
 <body>
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg mb-0 fixed-top bg-light">
-  <a class="navbar-brand" href="#">
-     Dedeepya
-  </a>
-  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" style="color: black;"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto pr-3">
-      <li class="nav-item">
-        <a class='nav-link' href='/'>Home</a>
-      </li>
-      <li class="nav-item">
-        <a class='nav-link' href='/about'>About</a>
-      </li>
-      <li class="nav-item">
-        <a class='nav-link' href='/works'>Works</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-light">
+    <a class="navbar-brand" href="index.html">Dedeepya</a>
 
+    <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- My Picture -->
-    <div class="container my-5 text-center pt-5">
-      <img src="src/profilepic.jpg" style="border-radius: 50%; width: 100%; max-width: 25rem; height: auto; box-shadow: 0px 2px 8px grey;" alt="My Photo">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto pr-3">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" data-nav="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html" data-nav="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="works.html" data-nav="works">Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" data-nav="contact">Contact</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-
-
-  <!-- My Intro -->
-  <div class="container mw-75 ">
-      <p>I am a <strong>Master's student in Computer Science</strong> at the <a href="https://www.uga.edu"><strong>University of Georgia</a>, Athens</strong>. Currently, I serve as a <strong>teaching assistant</strong> in the School of Computing department, and previously, I worked as a <strong>research assistant</strong>. Prior to this, I worked as a backend developer in the <strong>Cloud Engineering</strong> domain at <a href="https://www.deloitte.com/"><strong>Deloitte</a>, Hyderabad</strong> for 14 months. I completed my <strong>Bachelor's Degree in Information Technology</strong> from <a href="http://www.vnrvjiet.ac.in/">Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering &Technology (VNRVJIET)</a>, where I was awarded the <strong>Gold Medal</strong> for being the best outgoing student with the highest CGPA. I'm a driven individual who thrives on challenges, which motivates me to continuously learn and acquire new skills. I believe in practical learning, relating theoretical concepts to real-world situations to gain hands-on experience and enhance my skills.</p>
-  </div>
-
-
-      <!-- Skills -->
-  <div class="container">
-  <h2 class="mt-5 mb-4 text-center " style="color:#0075f6">LOOK WHAT I CAN DO</h2>
-  <h4 class="font-weight-bold text-center text-info"><img src="https://img.icons8.com/dotty/40/000000/web.png" class="m-3 "/>Development</h4>
-  <div class="row">
-    <div class="col-lg-6">
-       <div class="row skills d-flex flex-wrap justify-content-around align-items-center mb-3">
-           <div>
-               <!-- <i class="fab fa-html5 fa-5x"></i> -->
-               <img src="https://img.icons8.com/color/96/000000/html-5.png"/>
-               <p class="text-center">HTML5</p>
-             </div>
-             <div>
-               <!-- <i class="fab fa-css3-alt fa-5x"></i> -->
-               <img src="https://img.icons8.com/color/96/000000/css3.png"/>
-               <p class="text-center">CSS3</p>
-             </div>
-             <div>
-               <!-- <i class="fab fa-js fa-5x"></i> -->
-               <img src="https://img.icons8.com/color/96/000000/javascript.png"/>
-               <p class="text-center">Javascript</p>
-             </div>
-       </div>
-    </div>
-    <div class="col-lg-6">
-       <div class="row skills d-flex flex-wrap justify-content-around align-items-center mb-3">
-           <div>
-               <!-- <i class="fab fa-bootstrap fa-5x"></i> -->
-               <img src="https://img.icons8.com/color/96/000000/angularjs.png"/>
-               <p class="text-center">AngularJS</p>
-             </div>
-             <div>
-               <!-- <i class="fab fa-node fa-5x"></i> -->
-               <img src="https://img.icons8.com/color/96/000000/nodejs.png"/>
-               <p class="text-center">Node.js</p>
-             </div>
-             <div>
-              <img src="https://img.icons8.com/plasticine/96/000000/react.png"/>
-              <p class="text-center">React.js</p>
-             </div>
-       </div>
-    </div>
-</div>
-        <h4 class="font-weight-bold text-center text-info"><i class="m-3  fas fa-code"></i> Programming</h4>
-        <div class="row skills d-flex flex-wrap justify-content-around align-items-center mb-3">
-          <div>
-            <!-- <i class="fab fa-python fa-5x"></i> -->
-            <img src="https://img.icons8.com/color/96/000000/python.png"/>
-            <p class="text-center">Python</p>
+  <main>
+    <!-- Page header -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div class="row align-items-center">
+          <div class="col-lg-7 reveal">
+            <h1 class="title">A quick overview of my background and strengths</h1>
           </div>
-          <div>
-            <!-- <i class="fab fa-cuttlefish fa-5x"></i><span style="font-size: 1.5em;">++</span> -->
-            <img src="https://img.icons8.com/color/96/000000/c-plus-plus-logo.png"/>
-            <p class="text-center">C++</p>
+          <div class="col-lg-5 reveal">
+            <div class="profile-wrap">
+              <img src="src/profilepic.jpg" class="profile-img" alt="Dedeepya profile photo">
+            </div>
           </div>
-          <div>
-            <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo--v1.png"/>
-            <p class="text-center">Java</p>
-          </div>
-          <div>
-             <!-- <i class="fab fa-cuttlefish fa-5x"></i> -->
-             <img src="https://img.icons8.com/color/96/000000/c-programming.png"/>
-             <p class="text-center">C</p>
-          </div>
-          <div>
-             <!-- <i class="fab fa-cuttlefish fa-5x"></i> -->
-             <img src=" https://img.icons8.com/external-flaticons-flat-flat-icons/2x/external-algorithms-data-analytics-flaticons-flat-flat-icons.png"/>
-             <p class="text-center">Data Structures</p>
-          </div>
-            
-            
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <h4 class="font-weight-bold text-center text-info"><i class="m-3 fas fa-chalkboard-teacher"></i>Mezzanine Technology</h4>
-            <div class="row skills d-flex flex-wrap justify-content-around align-items-center mb-3">
-              <div>
-                <img src="https://img.icons8.com/dusk/96/artificial-intelligence.png"/>
-                <p class="text-center">Artificial Intelligence</p>
-              </div>
-              <div>
-                <img src="https://img.icons8.com/cotton/96/combo-chart--v2.png"/>
-                <p class="text-center">Data Analytics</p>
-              </div>
-              <div>
-                <img src="https://img.icons8.com/doodle/96/000000/learning.png"/>
-                <p class="text-center">Machine Learning</p>
-              </div>
-          </div>
-          </div>
-          <div class="col-lg-6 border-left border-dark">
-            <h4 class="font-weight-bold text-center text-info"><i class="m-3 fas fa-pen-fancy"></i> Other Skills</h4>
-        <div class="row skills d-flex flex-wrap justify-content-around align-items-center mb-3">
-          <div>
-            <img src="https://img.icons8.com/color/96/microsoft-office-2019.png"/>
-            <p class="text-center">MS Office</p>
-          </div>
-          <div>
-            <img src="https://img.icons8.com/plasticine/96/000000/canva.png"/>
-            <p class="text-center">Canva</p>
-          </div>
-          <div>
-            <img src="https://img.icons8.com/fluent/96/000000/adobe-photoshop.png"/>
-            <p class="text-center">Adobe Photoshop</p>
-          </div>
-      </div>
-          </div>
-          
-        </div>
-
-
-  </div>
-
-  <div class="container">
-    <h2  class="mt-5 text-center" style="color:#0075f6">A bit more about me...</h2>
-    <p>I believe in leading a balanced professional and personal career. So apart from Programming and Development,  I really enjoy travelling since it encourages <strong>Exploration</strong>. I'm enthusiastic about the arts, I adore photography, and I've participated in various competitions and completed few certification programmes.
-
-
-  <div class="container">
-    <div class="row my-5">
-      <div class="col-lg-1"></div>
-      <!-- Photography-->
-      <div class="card col-lg-4 m-2" style="border-radius: 10px; box-shadow:0px 2px 8px grey">
-        <img class="card-img-top" src="src/Golconda.jpg" alt="Photograph">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold text-center">Photography</h5>
-          <p class="card-text">Camera is a person's third eye and I believe photographer is the one who can freeze moments.</p>
-          <a href="https://drive.google.com/drive/folders/10Sp8QrssWMkDu71dmjE01IqSHjV3KkMb?usp=sharing" class="btn btn-primary mx-auto d-block" target="_blank"><i class="fas fa-camera mx-2"></i>View My Album</a>
         </div>
       </div>
-      <div class="col-lg-2"></div>
-      <!-- Designing -->
-      <div class="card col-lg-4 m-2" style="border-radius: 10px; box-shadow:0px 2px 8px grey">
-        <img class="card-img-top" src="src/art.jpg" alt="Photograph">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold text-center">Arts</h5>
-          <p class="card-text">Art is a visual form of thoughts and imagination, it speaks a lot more than content.</p>
-          <a href="https://drive.google.com/drive/folders/1yQsXUbwbzpY-WlGal47otQvU8hURsO5i?usp=sharing" class="btn btn-primary mx-auto d-block" target="_blank"><i class="fas fa-paint-brush mx-2"></i>View My Arts</a>
-        </div>
-      </div>
-      <div class="col-lg-1"></div>
-
-    </div>
-  </div>
-
-<div class="container">
-    <div class="row my-5">
-      <div class="col-lg-1"></div>
-      <!-- Certifications -->
-      <div class="card col-lg-4 m-2" style="border-radius: 10px; box-shadow:0px 2px 8px grey">
-        <img class="card-img-top" src="src/certificate.jpeg" alt="Photograph">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold text-center">Certifications</h5>
-          <p class="card-text">My passion to study drove me to enroll in different courses and excelled with good outcomes.</p>
-          <a href="https://drive.google.com/drive/folders/18aMCW9jKPiFkm0X8iDnQloYFwo-nROCG?usp=sharing" class="btn btn-primary mx-auto d-block" target="_blank"><i class="fas fa-certificate mx-2"></i>View My Certificates</a>
-        </div>
-      </div>
-      <div class="col-lg-2"></div>
-      <!-- Participations -->
-      <div class="card col-lg-4 m-2" style="border-radius: 10px; box-shadow:0px 2px 8px grey">
-        <img class="card-img-top" src="src/participate.jpg" alt="Photograph">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold text-center">Participations</h5>
-          <p class="card-text">I have actively participated in several competetions to sharpen and broaden my knowledge.</p>
-          <a href="https://drive.google.com/drive/folders/1-3UvRG0LClJXd7c8123qjq_568nFSATV?usp=sharing" class="btn btn-primary mx-auto d-block" target="_blank"><i class="fas fa-user mx-2"></i>View My Participation</a>
-        </div>
-      </div>
-      <div class="col-lg-1"></div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="bg-light text-center text-dark" id="contact">
-  <!-- Grid container -->
-  <div class="container">
-  
-  <div class="text-center text-dark p-2">Get in Touch</div>
-    <section>
-       <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com/in/dedeepya-yarlagadda-45a29a18b" target="_blank" role="button"><i class="fab fa-linkedin-in"></i></a>
-      <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com/Dedepya" target="_blank" role="button"><i class="fab fa-github"></i></a>
-      <a class="btn btn-outline-dark btn-floating m-1" href="mailto:dedeepyay.yarlagadda@gmail.com" target="_blank" role="button"><i class="fas fa-envelope"></i></a>
-      <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/dedeepya__9/" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
-      <a class="btn btn-outline-dark btn-floating m-1" href="https://www.facebook.com/deepu.sony.35/" target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
-      <a class="btn btn-outline-dark btn-floating m-1" href="https://twitter.com/Dedeepya_195" target="_blank" role="button"><i class="fab fa-twitter"></i></a>
     </section>
-  </div>
 
-  <!-- Copyright -->
-  <div class="text-center p-3">
-    © 2025 Copyright: Dedeepya Yarlagadda
-  </div>
-</footer>
+    <!-- Intro -->
+    <section class="section">
+      <div class="container reveal">
+        <p class="lead">
+          I am a <strong>Master's student in Computer Science</strong> at the
+          <a href="https://www.uga.edu" target="_blank" rel="noopener"><strong>University of Georgia</strong></a>, Athens.
+          Currently, I serve as a <strong>teaching assistant</strong> in the School of Computing department, and previously, I worked as a
+          <strong>research assistant</strong>. Prior to this, I worked as a backend developer in the <strong>Cloud Engineering</strong> domain at
+          <a href="https://www.deloitte.com/" target="_blank" rel="noopener"><strong>Deloitte</strong></a>, Hyderabad for 14 months.
+          I completed my <strong>Bachelor's Degree in Information Technology</strong> from
+          <a href="http://www.vnrvjiet.ac.in/" target="_blank" rel="noopener">
+            Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering & Technology (VNRVJIET)
+          </a>, where I was awarded the <strong>Gold Medal</strong> for being the best outgoing student with the highest CGPA.
+          I'm a driven individual who thrives on challenges, which motivates me to continuously learn and acquire new skills.
+          I believe in practical learning, relating theoretical concepts to real-world situations to gain hands-on experience and enhance my skills.
+        </p>
+      </div>
+    </section>
 
-<!-- Bootstrap Script -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- Skills -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">LOOK WHAT I CAN DO</h2>
 
+        <div class="reveal">
+          <h4 class="subhead">
+            <img src="https://img.icons8.com/dotty/40/000000/web.png" class="mr-2" alt="web icon">
+            Development
+          </h4>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="skills-grid mt-3 mb-3">
+                <div class="skill">
+                  <img src="https://img.icons8.com/color/96/000000/html-5.png" alt="HTML5"/>
+                  <p>HTML5</p>
+                </div>
+                <div class="skill">
+                  <img src="https://img.icons8.com/color/96/000000/css3.png" alt="CSS3"/>
+                  <p>CSS3</p>
+                </div>
+                <div class="skill">
+                  <img src="https://img.icons8.com/color/96/000000/javascript.png" alt="JavaScript"/>
+                  <p>JavaScript</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="skills-grid mt-3 mb-3">
+                <div class="skill">
+                  <img src="https://img.icons8.com/color/96/000000/angularjs.png" alt="AngularJS"/>
+                  <p>AngularJS</p>
+                </div>
+                <div class="skill">
+                  <img src="https://img.icons8.com/color/96/000000/nodejs.png" alt="Node.js"/>
+                  <p>Node.js</p>
+                </div>
+                <div class="skill">
+                  <img src="https://img.icons8.com/plasticine/96/000000/react.png" alt="React.js"/>
+                  <p>React.js</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h4 class="subhead"><i class="m-2 fas fa-code"></i> Programming</h4>
+
+          <div class="skills-grid mt-3 mb-3">
+            <div class="skill">
+              <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python"/>
+              <p>Python</p>
+            </div>
+            <div class="skill">
+              <img src="https://img.icons8.com/color/96/000000/c-plus-plus-logo.png" alt="C++"/>
+              <p>C++</p>
+            </div>
+            <div class="skill">
+              <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo--v1.png" alt="Java"/>
+              <p>Java</p>
+            </div>
+            <div class="skill">
+              <img src="https://img.icons8.com/color/96/000000/c-programming.png" alt="C"/>
+              <p>C</p>
+            </div>
+            <div class="skill">
+              <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/2x/external-algorithms-data-analytics-flaticons-flat-flat-icons.png" alt="Data Structures"/>
+              <p>Data Structures</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-6 reveal">
+            <h4 class="subhead"><i class="m-2 fas fa-chalkboard-teacher"></i> Mezzanine Technology</h4>
+            <div class="skills-grid mt-3 mb-3">
+              <div class="skill">
+                <img src="https://img.icons8.com/dusk/96/artificial-intelligence.png" alt="AI"/>
+                <p>Artificial Intelligence</p>
+              </div>
+              <div class="skill">
+                <img src="https://img.icons8.com/cotton/96/combo-chart--v2.png" alt="Data Analytics"/>
+                <p>Data Analytics</p>
+              </div>
+              <div class="skill">
+                <img src="https://img.icons8.com/doodle/96/000000/learning.png" alt="Machine Learning"/>
+                <p>Machine Learning</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <h4 class="subhead"><i class="m-2 fas fa-pen-fancy"></i> Other Skills</h4>
+            <div class="skills-grid mt-3 mb-3">
+              <div class="skill">
+                <img src="https://img.icons8.com/color/96/microsoft-office-2019.png" alt="MS Office"/>
+                <p>MS Office</p>
+              </div>
+              <div class="skill">
+                <img src="https://img.icons8.com/plasticine/96/000000/canva.png" alt="Canva"/>
+                <p>Canva</p>
+              </div>
+              <div class="skill">
+                <img src="https://img.icons8.com/fluent/96/000000/adobe-photoshop.png" alt="Photoshop"/>
+                <p>Adobe Photoshop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- More about -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">A bit more about me...</h2>
+        <p class="lead reveal">
+          I believe in leading a balanced professional and personal career. So apart from Programming and Development,
+          I really enjoy travelling since it encourages <strong>Exploration</strong>. I'm enthusiastic about the arts,
+          I adore photography, and I've participated in various competitions and completed few certification programmes.
+        </p>
+
+        <div class="row my-4">
+          <div class="col-lg-6 mb-4 reveal">
+            <div class="card card-boost">
+              <img class="card-img-top" src="src/Golconda.jpg" alt="Photography">
+              <div class="card-body">
+                <h5 class="card-title text-center">Photography</h5>
+                <p class="card-text">
+                  Camera is a person's third eye and I believe photographer is the one who can freeze moments.
+                </p>
+                <a href="https://drive.google.com/drive/folders/10Sp8QrssWMkDu71dmjE01IqSHjV3KkMb?usp=sharing"
+                   class="btn btn-primary mx-auto d-block" target="_blank" rel="noopener">
+                  <i class="fas fa-camera mr-2"></i>View My Album
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4 reveal">
+            <div class="card card-boost">
+              <img class="card-img-top" src="src/art.jpg" alt="Arts">
+              <div class="card-body">
+                <h5 class="card-title text-center">Arts</h5>
+                <p class="card-text">
+                  Art is a visual form of thoughts and imagination, it speaks a lot more than content.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1yQsXUbwbzpY-WlGal47otQvU8hURsO5i?usp=sharing"
+                   class="btn btn-primary mx-auto d-block" target="_blank" rel="noopener">
+                  <i class="fas fa-paint-brush mr-2"></i>View My Arts
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4 reveal">
+            <div class="card card-boost">
+              <img class="card-img-top" src="src/certificate.jpeg" alt="Certifications">
+              <div class="card-body">
+                <h5 class="card-title text-center">Certifications</h5>
+                <p class="card-text">
+                  My passion to study drove me to enroll in different courses and excelled with good outcomes.
+                </p>
+                <a href="https://drive.google.com/drive/folders/18aMCW9jKPiFkm0X8iDnQloYFwo-nROCG?usp=sharing"
+                   class="btn btn-primary mx-auto d-block" target="_blank" rel="noopener">
+                  <i class="fas fa-certificate mr-2"></i>View My Certificates
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4 reveal">
+            <div class="card card-boost">
+              <img class="card-img-top" src="src/participate.jpg" alt="Participations">
+              <div class="card-body">
+                <h5 class="card-title text-center">Participations</h5>
+                <p class="card-text">
+                  I have actively participated in several competetions to sharpen and broaden my knowledge.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1-3UvRG0LClJXd7c8123qjq_568nFSATV?usp=sharing"
+                   class="btn btn-primary mx-auto d-block" target="_blank" rel="noopener">
+                  <i class="fas fa-user mr-2"></i>View My Participation
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-dark" id="contact">
+    <div class="container py-4">
+      <div class="text-center text-dark font-weight-bold mb-2">Get in Touch</div>
+
+      <section class="mb-3">
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="https://www.linkedin.com/in/dedeepya-yarlagadda-45a29a18b" target="_blank" rel="noopener" role="button">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="https://github.com/Dedepya" target="_blank" rel="noopener" role="button">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="mailto:dedeepyay.yarlagadda@gmail.com" role="button">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="https://www.instagram.com/dedeepya__9/" target="_blank" rel="noopener" role="button">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="https://www.facebook.com/deepu.sony.35/" target="_blank" rel="noopener" role="button">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="btn btn-outline-dark btn-floating m-1 social-btn" href="https://twitter.com/Dedeepya_195" target="_blank" rel="noopener" role="button">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </section>
+    </div>
+
+    <div class="text-center p-3">
+      © 2026 Copyright : Dedeepya Yarlagadda
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a class="to-top" id="toTop" href="#" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Bootstrap Script -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2s0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Smooth scroll for internal anchors + close mobile nav
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        const nav = document.getElementById('navbarNav');
+        if (nav.classList.contains('show')) $('.navbar-toggler').click();
+      });
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+
+    // Back to top show/hide
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 450) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    });
+    toTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Navbar active state for About page:
+    // Keep About active normally, highlight Contact when footer is visible.
+    const setActive = (key) => {
+      document.querySelectorAll('.nav-link[data-nav]').forEach(l => l.classList.remove('active'));
+      const el = document.querySelector(`.nav-link[data-nav="${key}"]`);
+      if (el) el.classList.add('active');
+    };
+
+    setActive('about');
+
+    const footer = document.getElementById('contact');
+    const ioNav = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive('contact');
+        else setActive('about');
+      });
+    }, { threshold: 0.35 });
+
+    if (footer) ioNav.observe(footer);
+  </script>
 </body>
 </html>
