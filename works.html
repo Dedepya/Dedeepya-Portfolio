@@ -361,15 +361,49 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS-->
     <section class="section" id="projects" data-section="projects">
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
-        <p class="section-sub reveal">Here are few projects which I worked on recently.</p>
+        <p class="section-sub reveal">
+          Selected projects focused on real product features, clean architecture, and practical engineering impact.
+        </p>
 
         <div class="row">
-          <!-- COVID-19 Prediction -->
-          <div class="col-lg-6 mb-4 reveal" data-search="covid ct scan cnn tensorflow visualkeras deep learning diagnostic">
+          <!-- 1) Resume Analyzer -->
+          <div class="col-lg-6 mb-4 reveal" data-search="resume analyzer doculens ai nlp embeddings ats pdf parsing fastapi postgres docker">
+            <div class="card card-boost">
+              <img class="card-img-top"
+                src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80"
+                alt="Resume Analyzer"
+                style="height:250px; object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">DocuLens: Resume & Document Analyzer -</h5>
+                <p class="card-text">
+                  Built a resume analyzer that parses PDFs, extracts structured sections, and compares them against job descriptions.
+                  Generates match insights, missing-skill gaps, and rewrite suggestions with section-level feedback.
+                </p>
+
+                <p><span style="font-weight: 600;">Tech Stack </span>: Python, FastAPI, NLP, Embeddings, PostgreSQL, Docker</p>
+
+                <div class="tag-row" aria-label="Tech stack tags">
+                  <span class="tag"><i class="fab fa-python"></i>Python</span>
+                  <span class="tag"><i class="fas fa-brain"></i>NLP</span>
+                  <span class="tag"><i class="fas fa-vector-square"></i>Embeddings</span>
+                  <span class="tag"><i class="fas fa-bolt"></i>FastAPI</span>
+                  <span class="tag"><i class="fas fa-database"></i>PostgreSQL</span>
+                  <span class="tag"><i class="fab fa-docker"></i>Docker</span>
+                </div>
+              </div>
+              <div class="card-footer text-center border-0 bg-white pb-4">
+                <a href="https://github.com/Dedepya/SupoortIQ-Chatbot" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- 2) COVID-19 Prediction -->
+           <div class="col-lg-6 mb-4 reveal" data-search="covid ct scan cnn tensorflow visualkeras deep learning diagnostic">
             <div class="card card-boost">
               <img class="card-img-top" src="https://www.lendersonlinetraining.com/wp-content/uploads/2020/03/COVID-19-iStock-1213427702-small.jpg" alt="COVID-19 Prediction" style="height:250px; object-fit:cover;">
               <div class="card-body">
@@ -378,10 +412,8 @@
                   Developed a Deep Convolutional Neural Network based diagnostic model for Detection of COVID-19 from CT-Scan Images with the customized activation functions and optimizer functions.
                 </p>
 
-                <!-- Original line kept -->
                 <p><span style="font-weight: 600;">Tech Stack </span>: Python, TensorFlow, VisualKeras, Deep Convolutional Neural Networks, </p>
 
-                <!-- ✅ Tag row -->
                 <div class="tag-row" aria-label="Tech stack tags">
                   <span class="tag"><i class="fab fa-python"></i>Python</span>
                   <span class="tag"><i class="fas fa-brain"></i>TensorFlow</span>
@@ -395,25 +427,29 @@
             </div>
           </div>
 
-          <!-- Online Bookstore System -->
-          <div class="col-lg-6 mb-4 reveal" data-search="online bookstore react typescript springboot sql mongodb rest api payments recommendations">
+          <!-- 3) Online Bookstore Platform-->
+          <div class="col-lg-6 mb-4 reveal" data-search="online bookstore bookmart react typescript springboot sql mongodb payments orders admin panel">
             <div class="card card-boost">
-              <img class="card-img-top" src="src/bookstore.png" alt="Online Bookstore" style="height:250px; object-fit:cover;">
+              <img class="card-img-top"
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80"
+                alt="Online Bookstore"
+                style="height:250px; object-fit:cover;">
               <div class="card-body">
-                <h5 class="card-title">Online Bookstore System</h5>
+                <h5 class="card-title">Online Bookstore Platform</h5>
                 <p class="card-text">
-                  It will help users to efficiently browse, purchase, and manage books online, offering features like personalized recommendations, and secure payments.
+                  Built an end-to-end bookstore with catalog search, cart, checkout, and order tracking.
+                  Added role-based admin panel, inventory management, order invoices, and secure authentication.
                 </p>
 
-                <p><span style="font-weight: 600;">Tech Stack </span>: React, Typescript, SpringBoot, SQL, Mongo DB, RESTful API.</p>
+                <p><span style="font-weight: 600;">Tech Stack </span>: React, TypeScript, Spring Boot, SQL, MongoDB, REST API</p>
 
                 <div class="tag-row" aria-label="Tech stack tags">
                   <span class="tag"><i class="fab fa-react"></i>React</span>
                   <span class="tag"><i class="fas fa-code"></i>TypeScript</span>
-                  <span class="tag"><i class="fas fa-leaf"></i>SpringBoot</span>
+                  <span class="tag"><i class="fas fa-leaf"></i>Spring Boot</span>
                   <span class="tag"><i class="fas fa-database"></i>SQL</span>
                   <span class="tag"><i class="fas fa-server"></i>MongoDB</span>
-                  <span class="tag"><i class="fas fa-plug"></i>REST API</span>
+                  <span class="tag"><i class="fas fa-key"></i>Auth</span>
                 </div>
               </div>
               <div class="card-footer text-center border-0 bg-white pb-4">
@@ -422,14 +458,82 @@
             </div>
           </div>
 
-          <!-- AGRI GAIN -->
-          <div class="col-lg-6 mb-4 reveal" data-search="agri gain farmers pricing government schemes pests angularjs sql javascript">
+
+          <!-- 4) SupportIQ Chatbot -->
+          <div class="col-lg-6 mb-4 reveal" data-search="customer support chatbot ai rag ticket routing knowledge base fastapi react analytics">
             <div class="card card-boost">
-              <img class="card-img-top" src="src/agrigain.png" alt="AGRI GAIN" style="height:250px; object-fit:cover;">
+              <img class="card-img-top"
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
+                alt="AI Support Chatbot"
+                style="height:250px; object-fit:cover;">
               <div class="card-body">
-                <h5 class="card-title">AGRI GAIN Website</h5>
+                <h5 class="card-title">SupportIQ Chatbot</h5>
                 <p class="card-text">
-                  Assisting farmers to understand the selling price of their yields, government schemes available for their crop, as well as how to be prepared in the case of a pest or insect attack.
+                  Built a support chatbot that answers FAQs from a knowledge base and routes tickets by intent and priority.
+                  Includes conversation history, safe fallback flows, and admin analytics for common issues and resolution trends.
+                </p>
+
+                <p><span style="font-weight: 600;">Tech Stack </span>: Python, RAG, FastAPI, Vector Search, React, PostgreSQL</p>
+
+                <div class="tag-row" aria-label="Tech stack tags">
+                  <span class="tag"><i class="fab fa-python"></i>Python</span>
+                  <span class="tag"><i class="fas fa-brain"></i>RAG</span>
+                  <span class="tag"><i class="fas fa-database"></i>Vector Search</span>
+                  <span class="tag"><i class="fas fa-bolt"></i>FastAPI</span>
+                  <span class="tag"><i class="fab fa-react"></i>React</span>
+                  <span class="tag"><i class="fas fa-chart-pie"></i>Analytics</span>
+                </div>
+              </div>
+              <div class="card-footer text-center border-0 bg-white pb-4">
+                <a href="https://github.com/Dedepya/SupoortIQ-Chatbot" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- 5) Phishing Detector -->
+           <div class="col-lg-6 mb-4 reveal" data-search="phishing detector url scanner security blacklist domain reputation dns ssl heuristics fastapi chrome extension">
+            <div class="card card-boost">
+              <img class="card-img-top"
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80"
+                alt="Phishing Detector"
+                style="height:250px; object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">Phishing Detector </h5>
+                <p class="card-text">
+                  Built a phishing detection service that scores suspicious links using URL heuristics, domain reputation checks,
+                  SSL/DNS signals, and blacklist matching. Exposed a REST API and generated explainable reasons for each score.
+                </p>
+
+                <p><span style="font-weight: 600;">Tech Stack </span>: Python, FastAPI, Security Signals, REST API, Docker</p>
+
+                <div class="tag-row" aria-label="Tech stack tags">
+                  <span class="tag"><i class="fab fa-python"></i>Python</span>
+                  <span class="tag"><i class="fas fa-shield-alt"></i>Security</span>
+                  <span class="tag"><i class="fas fa-globe"></i>DNS/SSL</span>
+                  <span class="tag"><i class="fas fa-bolt"></i>FastAPI</span>
+                  <span class="tag"><i class="fas fa-list"></i>Blacklist</span>
+                  <span class="tag"><i class="fab fa-docker"></i>Docker</span>
+                </div>
+              </div>
+              <div class="card-footer text-center border-0 bg-white pb-4">
+                <a href="https://github.com/Dedepya/Fake-News-Detection-Using-Text-Mining-Classification" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6) AgriGain-->
+          <div class="col-lg-6 mb-4 reveal" data-search="agrigain farmsense farmers pricing government schemes alerts angularjs sql javascript dashboard">
+            <div class="card card-boost">
+              <img class="card-img-top"
+                src="https://images.unsplash.com/photo-1592982537447-6cde69b6f9dd?auto=format&fit=crop&w=1600&q=80"
+                alt="AgriGain"
+                style="height:250px; object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">AgriGain Plus: Farmer Advisory Portal</h5>
+                <p class="card-text">
+                  Built a portal that helps farmers track crop pricing, explore eligible government schemes, and log pest incidents.
+                  Added location-based market comparison, scheme bookmarking, and alert-style notifications for seasonal updates.
                 </p>
 
                 <p><span style="font-weight: 600;">Tech Stack </span>: HTML/CSS, JavaScript, AngularJS, SQL</p>
@@ -440,6 +544,7 @@
                   <span class="tag"><i class="fab fa-js"></i>JavaScript</span>
                   <span class="tag"><i class="fab fa-angular"></i>AngularJS</span>
                   <span class="tag"><i class="fas fa-database"></i>SQL</span>
+                  <span class="tag"><i class="fas fa-bell"></i>Alerts</span>
                 </div>
               </div>
               <div class="card-footer text-center border-0 bg-white pb-4">
@@ -448,83 +553,11 @@
             </div>
           </div>
 
-          <!-- Iris AI Chatbot -->
-          <div class="col-lg-6 mb-4 reveal" data-search="iris ai chatbot python machine learning flask customer engagement automation">
-            <div class="card card-boost">
-              <img class="card-img-top" src="https://imageio.forbes.com/specials-images/imageserve/65c08bba43faeeedd41c7a2f/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="Iris AI Chatbot" style="height:250px; object-fit:cover;">
-              <div class="card-body">
-                <h5 class="card-title">Iris AI Chatbot</h5>
-                <p class="card-text">
-                  Designed and developed an AI-powered chatbot to automate user interactions, provide instant responses, and enhance customer engagement.
-                </p>
 
-                <p><span style="font-weight: 600;">Tech Stack </span>: Python, Machine Learning, Flask, HTML/CSS, JavaScript.</p>
-
-                <div class="tag-row" aria-label="Tech stack tags">
-                  <span class="tag"><i class="fab fa-python"></i>Python</span>
-                  <span class="tag"><i class="fas fa-robot"></i>ML</span>
-                  <span class="tag"><i class="fas fa-flask"></i>Flask</span>
-                  <span class="tag"><i class="fab fa-html5"></i>HTML</span>
-                  <span class="tag"><i class="fab fa-css3-alt"></i>CSS</span>
-                  <span class="tag"><i class="fab fa-js"></i>JavaScript</span>
-                </div>
-              </div>
-              <div class="card-footer text-center border-0 bg-white pb-4">
-                <a href="https://github.com/Dedepya/Iris-AI" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Face Recognition Using SVM -->
-          <div class="col-lg-6 mb-4 reveal" data-search="face recognition svm opencv webcam python machine learning">
-            <div class="card card-boost">
-              <img class="card-img-top" src="https://static.vecteezy.com/system/resources/previews/000/581/100/original/biometric-person-identification-facial-recognition-concept-futuristic-low-polygonal-human-face-vector.jpg" alt="Face Recognition Using SVM" style="height:250px; object-fit:cover;">
-              <div class="card-body">
-                <h5 class="card-title">Face-Recognition-Using-SVM</h5>
-                <p class="card-text">A model for face recognition engine based on OpenCV to detect faces via a live webcam feed.</p>
-
-                <p><span style="font-weight: 600;">Tech Stack </span>: Python, Machine Learning, Open CV, Support vector machine.</p>
-
-                <div class="tag-row" aria-label="Tech stack tags">
-                  <span class="tag"><i class="fab fa-python"></i>Python</span>
-                  <span class="tag"><i class="fas fa-robot"></i>ML</span>
-                  <span class="tag"><i class="fas fa-camera"></i>OpenCV</span>
-                  <span class="tag"><i class="fas fa-chart-line"></i>SVM</span>
-                </div>
-              </div>
-              <div class="card-footer text-center border-0 bg-white pb-4">
-                <a href="https://github.com/Dedepya/Face-Recognition-Using-SVM" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- BLOOD BOON -->
-          <div class="col-lg-6 mb-4 reveal" data-search="blood boon donors hospitals web application request receive javascript bootstrap">
-            <div class="card card-boost">
-              <img class="card-img-top" src="https://theleaders-online.com/wp-content/uploads/2020/11/blood-bank.jpg" alt="Blood Boon" style="height:250px; object-fit:cover;">
-              <div class="card-body">
-                <h5 class="card-title">BLOOD BOON Website</h5>
-                <p class="card-text">
-                  A Web application that connects hospitals, blood donors, and acceptors so that blood may be requested and received in a timely way.
-                </p>
-
-                <p><span style="font-weight: 600;">Tech Stack </span>: HTML, CSS, Bootstrap, JavaScript</p>
-
-                <div class="tag-row" aria-label="Tech stack tags">
-                  <span class="tag"><i class="fab fa-html5"></i>HTML</span>
-                  <span class="tag"><i class="fab fa-css3-alt"></i>CSS</span>
-                  <span class="tag"><i class="fab fa-bootstrap"></i>Bootstrap</span>
-                  <span class="tag"><i class="fab fa-js"></i>JavaScript</span>
-                </div>
-              </div>
-              <div class="card-footer text-center border-0 bg-white pb-4">
-                <a href="https://dedepya.github.io/Blood-Boon/" class="btn btn-lg btn-outline-dark px-5" target="_blank" rel="noopener">View Live</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
+
 
     <!-- ASSISTANTSHIPS (IMAGES KEPT) -->
     <section class="section" id="assistantships" data-section="assistantships">
@@ -574,6 +607,21 @@
         <h2 class="section-title reveal">Work Experiences & Internships</h2>
 
         <div class="row mt-3">
+
+           <!-- Toptraits -->
+           <div class="col-lg-6 mb-4 reveal" data-search="toptraits AI intern data preparation evaluation deployment integrating pipelines">
+            <div class="card card-boost">
+              <div class="mini-logo-wrap">
+                <img src="https://toptraits.ai/wp-content/uploads/2025/07/cropped-toptraits-scaled-2.png" alt="toptraits">
+              </div>
+              <div class="card-body pt-2">
+                <h5 class="card-title">GenAI Software Engineer Intern- Toptraits</h5>
+                <p class="card-text">Building production-ready AI systems by taking models from data preparation through evaluation and deployment, and integrating them into scalable software pipelines.</p>
+              </div>
+            </div>
+          </div>
+
+
           <!-- Deloitte -->
           <div class="col-lg-6 mb-4 reveal" data-search="deloitte cloud engineer developer usi consulting">
             <div class="card card-boost">
@@ -581,8 +629,8 @@
                 <img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/61/59/deloitte.png" alt="Deloitte">
               </div>
               <div class="card-body pt-2">
-                <h5 class="card-title">Cloud Engineer FTE - Deloitte</h5>
-                <p class="card-text">I worked as a full-time developer at Deloitte USI Consulting in Cloud Engineering domain</p>
+                <h5 class="card-title">Software Developer (FTE) - Deloitte</h5>
+                <p class="card-text">Worked as a full-time software developer on enterprise-level applications, supported backend APIs, cloud services, and production-ready workflows.</p>
               </div>
             </div>
           </div>
@@ -626,18 +674,6 @@
             </div>
           </div>
 
-          <!-- Internshala -->
-          <div class="col-lg-6 mb-4 reveal" data-search="internshala student partner campus ambassador internships">
-            <div class="card card-boost">
-              <div class="mini-logo-wrap">
-                <img src="https://th.bing.com/th/id/R.31faa962981bada8380e378dbbfa119e?rik=wh206TrRFAZ%2bnw&riu=http%3a%2f%2fvisitshubham.weebly.com%2fuploads%2f9%2f7%2f9%2f0%2f97902560%2fpublished%2fisp-logo-3-0.png%3f1511418653&ehk=vI7lIf9fcc46orCCWInMbZ55O7URBzhaKWOySRpPVJU%3d&risl=&pid=ImgRaw&r=0" alt="Internshala">
-              </div>
-              <div class="card-body pt-2">
-                <h5 class="card-title">Internshala Student Partner, India</h5>
-                <p class="card-text">Campus ambassador for Internshala (ISP) to provide crucial internship information to students.</p>
-              </div>
-            </div>
-          </div>
 
           <!-- NSS -->
           <div class="col-lg-6 mb-4 reveal" data-search="nss volunteer social service personality development team nss india">
@@ -646,8 +682,8 @@
                 <img src="https://2.bp.blogspot.com/-b-ci14Cl26c/Wv_cocZviaI/AAAAAAAABcM/1MH7Q9sfws4_3eyLY6j-l0QgibJqzA-mgCLcBGAs/s1600/NSS-logo.jpg" alt="NSS">
               </div>
               <div class="card-body pt-2">
-                <h5 class="card-title">Team NSS, India</h5>
-                <p class="card-text">A part of Team NSS VNRVJIET - Social Service through Personality Development.</p>
+                <h5 class="card-title">Nation Service Scheme Student Partner</h5>
+                <p class="card-text">As part of Team NSS VNRVJIET - Social Service through Personality Development.</p>
               </div>
             </div>
           </div>
@@ -656,7 +692,7 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS (IMAGES KEPT) -->
+    <!-- PUBLICATIONS -->
     <section class="section" id="publications" data-section="publications">
       <div class="container">
         <h2 class="section-title reveal">Publications & Conferences</h2>
@@ -700,7 +736,7 @@
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS (IMAGES KEPT) -->
+    <!-- ACHIEVEMENTS  -->
     <section class="section" id="achievements" data-section="achievements">
       <div class="container">
         <h2 class="section-title reveal">Achievements</h2>
